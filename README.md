@@ -60,7 +60,27 @@ You have changes in one branch that you want to merge into another. You have to 
      addresses.json | 7 +++++++
      1 file changed, 7 insertions(+)
 
-This example shows that a merge did take place and that it was successful. In the case where no merge is necessary, it is called fast forwarding. This would occur if you had a feature branch that you did work on and you were merging back onto master that had not changed.
+This example shows that a merge did take place and that it was successful. In the case where no merge is necessary, it is called fast forwarding. This would occur if you had a feature branch that you did work on and you were merging back onto master that had not changed. When auto merge doesn't work, here is the message:
+
+    Auto-merging addresses.json
+    CONFLICT (content): Merge conflict in addresses.json
+    Automatic merge failed; fix conflicts and then commit the result.
+
+This will change the file with indications as to what has happened.
+
+    {
+        "name": "home",
+        "line1": "Flat 26 Building 39",
+    <<<<<<< HEAD
+        "line2": "London",
+    =======
+        "line2": "Marlborough Road",
+    >>>>>>> hotfix
+        "city": "Ely",
+        "postCode": "CB6 2SW"
+    },
+
+You must now manually edit to make the code correct and then commit as normal.
 
 ## Deleting a branch
 
