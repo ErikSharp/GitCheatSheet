@@ -116,7 +116,11 @@ To synchronize your work with a given remote:
 
 This will lookup which server is origin (`git remote -v`) and fetches any data you don't have yet and move your origin/master pointer to its new position.
 
+After you do this, you will have to merge the changes to your local branch. A shortcut for doing this is to use (`git pull`) instead which does both the fetch and the merge in one command.
+
 ## Remotes
+
+https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
 
 You can have multiple remotes. One is created automatically called origin when you do:
 
@@ -134,6 +138,15 @@ This could be useful if you wanted to have a server that contained work that did
 
 Any data that comes from a remote goes to a remote tracking branch. Think of this like another branch called origin/master. In the case of a second remote (dev-team), we would have another remote tracking branch called dev-team/master.
 
+You can merge these updates onto your branch with (`git merge origin/master`).
+
+If the remote contains more than just a master branch and you don't yet have it, you can easily create a local branch that will track the remote branch with:
+
+(`git checkout serverfix`)
+
+    Branch serverfix set up to track remote branch serverfix from origin.
+    Switched to a new branch 'serverfix'
+
 ## Pushing to the Remote
 
 When you want to share your changes with the remote:
@@ -144,5 +157,10 @@ When you want to share your changes with the remote:
 
 [Here](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage#_credential_caching) is the official documentation on this.
 
-asdflasdf
-asdf
+GitHub is moving away from this in favour of their Personal Access Tokens (PAT). I got this email:
+
+You recently used a password to access an endpoint through the GitHub API using git-credential-manager (Microsoft Windows NT 6.2.9200.0; Win32NT; x64) CLR/4.0.30319 git-tools/1.20.0. We will deprecate basic authentication using password to this endpoint soon:
+
+https://api.github.com/user/subscriptions
+
+We recommend using a personal access token (PAT) with the appropriate scope to access this endpoint instead. Visit https://github.com/settings/tokens for more information.
