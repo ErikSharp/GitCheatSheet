@@ -139,3 +139,9 @@ Any data that comes from a remote goes to a remote tracking branch. Think of thi
 When you want to share your changes with the remote:
 
 (`git push origin hotfix`) hotfix is the name of a branch
+
+## Credential Storage
+
+[Here](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage#_credential_caching) is the official documentation on this.
+
+asdflasdf
