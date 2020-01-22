@@ -1,4 +1,4 @@
-# GitCheatSheet
+# GitCheatSheet done in erik branch
 
 This document presents a scenario of the creation of a Git controlled application. It goes through as many steps as possible to demonstrate the various functions in Git.
 
