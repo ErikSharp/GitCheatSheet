@@ -193,3 +193,10 @@ You recently used a password to access an endpoint through the GitHub API using 
 https://api.github.com/user/subscriptions
 
 We recommend using a personal access token (PAT) with the appropriate scope to access this endpoint instead. Visit https://github.com/settings/tokens for more information.
+
+## Rebasing
+
+Rebasing must begin from the source branch and not the destination as it works with merging.
+
+1. `git checkout experiment`
+1. `git rebase master`
