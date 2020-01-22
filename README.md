@@ -4,6 +4,8 @@ Did this in master
 
 This document presents a scenario of the creation of a Git controlled application. It goes through as many steps as possible to demonstrate the various functions in Git.
 
+Did this in erik
+
 ## Application creation
 
 To create a new application we first need to have a console open to the directory where we want the application to reside. This will include the folder named after the application.
