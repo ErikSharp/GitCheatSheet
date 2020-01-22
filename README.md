@@ -80,7 +80,7 @@ This will change the file with indications as to what has happened.
         "postCode": "CB6 2SW"
     },
 
-You must now manually edit to make the code correct and then commit as normal.
+You must now manually edit to make the code correct. Staging the file will mark it as resolved and then commit as normal.
 
 ## Deleting a branch
 
@@ -89,3 +89,53 @@ In the above example, we have merged our branch back onto master and we now have
 (`git branch -d my-new-feature-branch`)
 
     Deleted branch my-new-feature-branch (was 3ee2d8e).
+
+## Branch Utilities
+
+To see what branches have been merged and not merged onto the current (HEAD) branch:
+
+(`git branch --merged`) or (`git branch --no-merged`)
+
+You could use this determine which branches are safe to delete. You cannot delete a branch that has not been merged unless you use:
+
+(`git branch -D some-branch`) This will force the deletion. You will lose work!!!
+
+## Workflows
+
+[This page](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) has a great explanation of different workflows that you can do with Git.
+
+# Remote Branches
+
+[Information comes from here](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches)
+
+## Fetching
+
+To synchronize your work with a given remote:
+
+(`git fetch origin`)
+
+This will lookup which server is origin (`git remote -v`) and fetches any data you don't have yet and move your origin/master pointer to its new position.
+
+## Remotes
+
+You can have multiple remotes. One is created automatically called origin when you do:
+
+(`git clone https://github.com/ErikSharp/GitCheatSheet.git`)
+
+The name defaults to origin, but you can change that with a flag with the clone.
+
+You can add additional remotes like this:
+
+(`git remote add dev-team git://git.dev-team.ourcompany.com`)
+
+This could be useful if you wanted to have a server that contained work that did not go to the main server.
+
+## Remote Tracking Branches
+
+Any data that comes from a remote goes to a remote tracking branch. Think of this like another branch called origin/master. In the case of a second remote (dev-team), we would have another remote tracking branch called dev-team/master.
+
+## Pushing to the Remote
+
+When you want to share your changes with the remote:
+
+(`git push origin hotfix`) hotfix is the name of a branch
