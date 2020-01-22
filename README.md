@@ -134,6 +134,19 @@ You can add additional remotes like this:
 
 This could be useful if you wanted to have a server that contained work that did not go to the main server.
 
+You can view your remote branches easily with:
+
+(`git branch -vv`)
+
+    iss53     7e424c3 [origin/iss53: ahead 2] forgot the brackets
+    master    1ae2a45 [origin/master] deploying index fix
+    * serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] this should do it
+    testing   5ea463a trying something new
+
+It’s important to note that these numbers are only since the last time you fetched from each server. This command does not reach out to the servers, it’s telling you about what it has cached from these servers locally. If you want totally up to date ahead and behind numbers, you’ll need to fetch from all your remotes right before running this. You could do that like this:
+
+(`git fetch --all; git branch -vv`)
+
 ## Remote Tracking Branches
 
 Any data that comes from a remote goes to a remote tracking branch. Think of this like another branch called origin/master. In the case of a second remote (dev-team), we would have another remote tracking branch called dev-team/master.
@@ -152,6 +165,12 @@ If the remote contains more than just a master branch and you don't yet have it,
 When you want to share your changes with the remote:
 
 (`git push origin hotfix`) hotfix is the name of a branch
+
+## Delete Remote Branch
+
+You can delete a remote branch when everything from it has been merged with:
+
+(`git push origin --delete serverfix`)
 
 ## Credential Storage
 
