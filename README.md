@@ -166,11 +166,21 @@ When you want to share your changes with the remote:
 
 (`git push origin hotfix`) hotfix is the name of a branch
 
+Suppose that you have a local branch that you want to push to a remote server. Doing this will create the branch on the server and set it to be an upstream branch that your local branch will now track.
+
+(`git branch -u origin/serverfix`)
+
+    Branch serverfix set up to track remote branch serverfix from origin.
+
 ## Delete Remote Branch
 
 You can delete a remote branch when everything from it has been merged with:
 
 (`git push origin --delete serverfix`)
+
+      erik      6c44595 [origin/erik] how to delete
+    * master    6c44595 [origin/master] how to delete
+      serverfix d0f40b4 [origin/serverfix: gone] removed server changes
 
 ## Credential Storage
 
